@@ -9,7 +9,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 export class AppComponent {
   title = 'learnFormly';
   form = new FormGroup({});
-  model = { email: 'email@gmail.com' };
+  model = {};
   fields: FormlyFieldConfig[] = [
     {
       key: 'email',
@@ -23,9 +23,17 @@ export class AppComponent {
         hide: (field) => {
           console.log(field);
         },
-        'props.disabled': (field) => {
-          console.log(field);
-          return true;
+        // 'props.disabled': (field) => {
+        //   console.log(field);
+        //   return true;
+        // },
+      },
+      validation: {
+        messages: {
+          required: (error: any, field: FormlyFieldConfig) => {
+            console.log(field);
+            return ` is not a valid IP Address`;
+          },
         },
       },
     },
