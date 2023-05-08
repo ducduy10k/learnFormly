@@ -7,8 +7,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyPrimeNGModule } from '@ngx-formly/primeng';
 import { CustomFieldType } from './customType.component';
+import { AddressComponent } from './address.component';
 @NgModule({
-  declarations: [AppComponent, CustomFieldType],
+  declarations: [AppComponent, CustomFieldType, AddressComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
